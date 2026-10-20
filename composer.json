@@ -1,0 +1,31 @@
+{
+    "name": "nickmsk9/php-oop",
+    "description": "Учебный проект для изучения ООП на PHP",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": "@php examples/01-classes-and-objects.php",
+        "lint": "find src examples -type f -name '*.php' -print0 | xargs -0 -n1 php -l",
+        "check": [
+            "@composer validate --strict",
+            "@lint",
+            "@start"
+        ]
+    },
+    "scripts-descriptions": {
+        "start": "Запустить первый пример ООП",
+        "lint": "Проверить синтаксис PHP-файлов (macOS/Linux)",
+        "check": "Проверить Composer, синтаксис и запуск примера"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
